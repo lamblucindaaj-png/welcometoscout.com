@@ -886,6 +886,290 @@ footer {
   .journey-step + .journey-step { border-left: none; border-top: 1px solid #E5E7EB; }
   footer { flex-direction: column; gap: 8px; text-align: center; }
 }
+
+/* ── Clarity Score — likert buttons ── */
+.likert-options {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.likert-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  border: 2px solid #E5E7EB;
+  background: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #6B7280;
+  cursor: pointer;
+  transition: all 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.likert-btn:hover {
+  border-color: #2A8A8A;
+  color: #2A8A8A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(42,138,138,0.15);
+}
+
+.likert-btn.selected {
+  background: #2A8A8A;
+  border-color: #2A8A8A;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(42,138,138,0.3);
+}
+
+.likert-num { font-size: 18px; font-weight: 700; line-height: 1; }
+
+.likert-wrap { margin-bottom: 32px; }
+
+.likert-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.likert-label {
+  font-size: 11px;
+  color: #6B7280;
+  font-weight: 500;
+}
+
+.progress-wrap { margin-bottom: 28px; }
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.progress-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #2A8A8A;
+}
+
+.progress-count { font-size: 13px; color: #6B7280; font-weight: 500; }
+
+.progress-bar-bg {
+  height: 4px;
+  background: #E5E7EB;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2A8A8A, #E8622A);
+  border-radius: 100px;
+  transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+.dimension-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.question-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 3vw, 24px);
+  line-height: 1.4;
+  color: #1C2B4A;
+  margin-bottom: 28px;
+}
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-ghost {
+  background: none;
+  border: none;
+  color: #6B7280;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.2s;
+}
+
+.btn-ghost:hover { color: #1C2B4A; }
+
+.intro-eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #E8622A;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.intro-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 5vw, 42px);
+  line-height: 1.15;
+  color: #1C2B4A;
+  margin-bottom: 8px;
+}
+
+.intro-title span { color: #2A8A8A; font-style: italic; }
+
+.intro-subtitle {
+  font-size: 15px;
+  color: #6B7280;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.dimensions-preview {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.dim-pill {
+  background: white;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 100px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1C2B4A;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dim-pill .dot { width: 7px; height: 7px; border-radius: 50%; }
+
+.intro-note { margin-top: 12px; font-size: 12px; color: #6B7280; }
+
+.results-header { text-align: center; margin-bottom: 36px; padding-bottom: 32px; border-bottom: 1px solid #E5E7EB; }
+.results-eyebrow { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #E8622A; font-weight: 600; margin-bottom: 12px; }
+.results-name { font-family: 'Playfair Display', serif; font-size: 16px; color: #6B7280; margin-bottom: 6px; }
+.score-display { font-family: 'Playfair Display', serif; font-size: clamp(56px, 10vw, 80px); font-weight: 700; color: #1C2B4A; line-height: 1; margin-bottom: 6px; }
+.score-display span { font-size: 0.4em; color: #6B7280; vertical-align: super; }
+.score-label { font-size: 16px; font-weight: 600; color: #2A8A8A; margin-bottom: 12px; }
+.score-summary { max-width: 480px; margin: 0 auto; font-size: 14px; line-height: 1.7; color: #6B7280; }
+.dimensions-title { font-family: 'Playfair Display', serif; font-size: 20px; color: #1C2B4A; margin-bottom: 20px; }
+
+.dimension-row {
+  margin-bottom: 16px;
+  padding: 18px 20px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+}
+
+.dim-row-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+
+.dim-name {
+  font-weight: 600;
+  font-size: 13px;
+  color: #1C2B4A;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dim-letter {
+  width: 26px; height: 26px;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 12px; color: white;
+}
+
+.dim-score-text { font-weight: 700; font-size: 16px; color: #1C2B4A; }
+.dim-bar-bg { height: 6px; background: #F3F4F6; border-radius: 100px; overflow: hidden; margin-bottom: 8px; }
+.dim-bar-fill { height: 100%; border-radius: 100px; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); width: 0%; }
+.dim-insight { font-size: 12px; color: #6B7280; line-height: 1.5; }
+
+.dim-tag {
+  display: inline-block;
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 4px; margin-bottom: 6px;
+}
+
+.tag-strong { background: #DCFCE7; color: #166534; }
+.tag-developing { background: #FEF3C7; color: #92400E; }
+.tag-focus { background: #FEE2E2; color: #991B1B; }
+
+.results-cta {
+  background: #1C2B4A;
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.results-cta::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 150px; height: 150px;
+  border-radius: 50%;
+  background: rgba(232,98,42,0.15);
+}
+
+.cta-title { font-family: 'Playfair Display', serif; font-size: 22px; color: white; margin-bottom: 8px; position: relative; z-index: 1; }
+.cta-sub { font-size: 13px; color: #8ABFBF; margin-bottom: 20px; line-height: 1.6; position: relative; z-index: 1; }
+
+.cta-buttons {
+  display: flex; gap: 12px; justify-content: center;
+  flex-wrap: wrap; position: relative; z-index: 1;
+}
+
+.btn-cta {
+  background: #E8622A; color: white; border: none;
+  padding: 12px 24px; border-radius: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: all 0.2s;
+}
+
+.btn-cta:hover { background: #D4561F; transform: translateY(-1px); }
+
+.btn-cta-ghost {
+  background: transparent; color: white;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  padding: 12px 24px; border-radius: 8px;
+  font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: all 0.2s;
+}
+
+.btn-cta-ghost:hover { border-color: white; }
+
+.section-divider { height: 1px; background: #E5E7EB; margin: 28px 0; }
+
+.retake-link { text-align: center; margin-top: 16px; }
+.retake-link button {
+  background: none; border: none; color: #6B7280;
+  font-size: 13px; cursor: pointer; text-decoration: underline;
+  font-family: 'DM Sans', sans-serif;
+}
 </style>
 </head>
 <body>
@@ -1221,24 +1505,24 @@ footer {
         <span class="testimonial-quote-mark">"</span>
         <p class="testimonial-text">A rare leader who blends creativity with execution, inspires teams, and drives real commercial impact.</p>
         <div class="testimonial-divider"></div>
-        <div class="testimonial-attr">Matthew Moulding</div>
-        <div class="testimonial-role">Founder, THG</div>
+        <div class="testimonial-attr">Founder, Global E-commerce Business</div>
+        <div class="testimonial-role">Former mentor</div>
       </div>
 
       <div class="testimonial-card reveal reveal-delay-2">
         <span class="testimonial-quote-mark">"</span>
         <p class="testimonial-text">Always a step ahead. A natural coach who elevates both people and performance.</p>
         <div class="testimonial-divider"></div>
-        <div class="testimonial-attr">Neil Mistry</div>
-        <div class="testimonial-role">CEO, Myprotein</div>
+        <div class="testimonial-attr">CEO, Global Sports Nutrition Brand</div>
+        <div class="testimonial-role">Former colleague</div>
       </div>
 
       <div class="testimonial-card reveal reveal-delay-3">
         <span class="testimonial-quote-mark">"</span>
         <p class="testimonial-text">One of the most innovative and strategic minds I've worked with.</p>
         <div class="testimonial-divider"></div>
-        <div class="testimonial-attr">Reece Medway</div>
-        <div class="testimonial-role">Google Partner</div>
+        <div class="testimonial-attr">Senior Partner, Google</div>
+        <div class="testimonial-role">Industry peer</div>
       </div>
     </div>
   </div>

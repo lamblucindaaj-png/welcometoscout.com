@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCOUT — Your Strategic Compass | Lucinda Lamb</title>
+<meta name="description" content="SCOUT is a strategic consultancy for founders and leaders who want clarity, direction and momentum. Book a Compass Session with Lucinda Lamb.">
+<meta property="og:title" content="SCOUT — Your Strategic Compass">
+<meta property="og:description" content="A strategic consultancy for founders who want to move — with purpose, confidence, and a clear plan.">
+<meta name="theme-color" content="#1C2B4A">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1C2B4A;
+  --teal: #2A8A8A;
+  --teal-dark: #1A6B6B;
+  --teal-light: #E8F5F4;
+  --teal-mid: #4FAAA0;
+  --orange: #E8622A;
+  --orange-light: #FDF0EA;
+  --cream: #FAF7F2;
+  --charcoal: #1C1C1C;
+  --grey: #6B7280;
+  --light: #F3F4F6;
+  --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  overflow-x: hidden;
+}
+
+/* ── Scroll animations ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── Header ── */
+header {
+  background: var(--navy);
+  padding: 18px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-text {
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 3px;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: white; }
+
+.nav-cta {
+  background: var(--orange) !important;
+  color: white !important;
+  padding: 9px 20px;
+  border-radius: 6px;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  transition: background 0.2s !important;
+}
+
+.nav-cta:hover { background: #D4561F !important; }
+
+/* ── Hero ── */
+.hero {
+  background: var(--navy);
+  padding: 100px 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,98,42,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: -60px;
+  width: 350px; height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(42,138,138,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--orange);
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1.1;
+  color: white;
+  margin-bottom: 24px;
+  font-weight: 900;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--teal-mid);
+}
+
+.hero-subtitle {
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: #D4561F;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(232,98,42,0.35);
+}
+
+.btn-ghost-white {
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+
+.btn-ghost-white:hover { color: white; }
+
+/* ── Abstract portrait ── */
+.hero-portrait {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portrait-ring {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal-dark) 0%, var(--navy) 100%);
+  border: 2px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.portrait-ring::before {
+  content: '';
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: rgba(232,98,42,0.15);
+}
+
+.portrait-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.portrait-compass {
+  margin: 0 auto 16px;
+}
+
+.portrait-initials {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.portrait-name-tag {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--teal-mid);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.portrait-float-1,
+.portrait-float-2,
+.portrait-float-3 {
+  position: absolute;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.portrait-float-1 { top: 20px; right: -20px; animation: float1 4s ease-in-out infinite; }
+.portrait-float-2 { bottom: 40px; left: -30px; animation: float2 5s ease-in-out infinite; }
+.portrait-float-3 { top: 50%; right: -40px; animation: float3 4.5s ease-in-out infinite; }
+
+@keyframes float1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+@keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+@keyframes float3 { 0%,100%{transform:translateY(-4px)} 50%{transform:translateY(4px)} }
+
+/* ── Section shared ── */
+section {
+  padding: 88px 48px;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--orange);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4vw, 42px);
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--teal);
+}
+
+.section-lead {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--grey);
+  max-width: 600px;
+  margin-bottom: 56px;
+}
+
+/* ── About ── */
+.about-section { background: var(--cream); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.about-story p {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+}
+
+.about-story p strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.about-story blockquote {
+  border-left: 3px solid var(--teal);
+  padding-left: 20px;
+  margin: 28px 0;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--navy);
+  line-height: 1.6;
+}
+
+.truths {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.truth-card {
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 20px 22px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.truth-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+  transform: translateX(4px);
+}
+
+.truth-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.truth-body h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.truth-body p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--grey);
+}
+
+/* ── SCOUT Framework ── */
+.framework-section {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+
+.framework-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(circle at 80% 20%, rgba(42,138,138,0.12) 0%, transparent 50%),
+                    radial-gradient(circle at 20% 80%, rgba(232,98,42,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.framework-section .section-title { color: white; }
+.framework-section .section-lead { color: rgba(255,255,255,0.55); }
+.framework-section .section-eyebrow { color: var(--teal-mid); }
+.framework-section .section-eyebrow::before { background: var(--teal-mid); }
+
+.scout-letters {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.scout-letter-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: all 0.25s;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.scout-letter-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.scout-letter-card:hover {
+  background: rgba(255,255,255,0.09);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+}
+
+.scout-letter-card:hover::before { opacity: 1; }
+
+.letter-char {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.letter-word {
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.letter-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.55;
+}
+
+/* ── Services ── */
+.services-section { background: var(--cream); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.service-card-header {
+  padding: 28px 28px 24px;
+  position: relative;
+}
+
+.service-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0.08;
+  position: absolute;
+  top: 12px; right: 20px;
+  color: currentColor;
+}
+
+.service-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+
+.service-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.service-tagline {
+  font-size: 13px;
+  color: var(--grey);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.service-card-body {
+  padding: 0 28px 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-divider {
+  height: 1px;
+  background: #F3F4F6;
+  margin-bottom: 20px;
+}
+
+.service-points {
+  list-style: none;
+  flex: 1;
+}
+
+.service-points li {
+  font-size: 13.5px;
+  color: var(--charcoal);
+  padding: 7px 0;
+  border-bottom: 1px solid #F9FAFB;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.service-points li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.service-cta-link {
+  margin-top: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s;
+}
+
+.service-cta-link:hover { gap: 10px; }
+
+/* Service colour themes */
+.service-card.tier-1 .service-card-header { background: var(--teal-light); }
+.service-card.tier-1 .service-tag { background: rgba(42,138,138,0.15); color: var(--teal-dark); }
+.service-card.tier-1 .service-number { color: var(--teal); }
+.service-card.tier-1 .service-points li::before { background: var(--teal); }
+.service-card.tier-1 .service-cta-link { color: var(--teal); }
+
+.service-card.tier-2 .service-card-header { background: var(--orange-light); }
+.service-card.tier-2 .service-tag { background: rgba(232,98,42,0.12); color: #B84E20; }
+.service-card.tier-2 .service-number { color: var(--orange); }
+.service-card.tier-2 .service-points li::before { background: var(--orange); }
+.service-card.tier-2 .service-cta-link { color: var(--orange); }
+
+.service-card.tier-3 .service-card-header { background: #EEF1F7; }
+.service-card.tier-3 .service-tag { background: rgba(28,43,74,0.1); color: var(--navy); }
+.service-card.tier-3 .service-number { color: var(--navy); }
+.service-card.tier-3 .service-points li::before { background: var(--navy); }
+.service-card.tier-3 .service-cta-link { color: var(--navy); }
+
+/* ── Journey bar ── */
+.journey-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 40px;
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.journey-step {
+  flex: 1;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.journey-step + .journey-step {
+  border-left: 1px solid #E5E7EB;
+}
+
+.journey-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.journey-step-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 2px;
+}
+
+.journey-step-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.journey-arrow {
+  width: 24px;
+  text-align: center;
+  color: var(--orange);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* ── Testimonials ── */
+.testimonials-section {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-section::after {
+  content: '"';
+  position: absolute;
+  top: -40px; left: 40px;
+  font-family: 'Playfair Display', serif;
+  font-size: 400px;
+  color: rgba(255,255,255,0.03);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.testimonials-section .section-title { color: white; }
+.testimonials-section .section-eyebrow { color: var(--teal-mid); }
+.testimonials-section .section-eyebrow::before { background: var(--teal-mid); }
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 28px;
+  transition: all 0.25s;
+}
+
+.testimonial-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-4px);
+}
+
+.testimonial-quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  color: var(--teal-mid);
+  line-height: 0.8;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.testimonial-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 20px;
+}
+
+.testimonial-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin-bottom: 16px;
+}
+
+.testimonial-attr {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--teal-mid);
+  letter-spacing: 0.5px;
+}
+
+.testimonial-role {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  margin-top: 2px;
+}
+
+/* ── CTA Section ── */
+.cta-section {
+  background: var(--cream);
+  text-align: center;
+  padding: 100px 48px;
+}
+
+.cta-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 48px);
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.cta-title em { font-style: italic; color: var(--teal); }
+
+.cta-sub {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--grey);
+  margin-bottom: 36px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--navy);
+  border: 1.5px solid #E5E7EB;
+  padding: 15px 28px;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  border-color: var(--navy);
+  transform: translateY(-1px);
+}
+
+.cta-note {
+  font-size: 12px;
+  color: var(--grey);
+}
+
+/* ── Footer ── */
+footer {
+  background: var(--navy);
+  padding: 24px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  header { padding: 14px 24px; }
+  .nav-links { display: none; }
+  section { padding: 60px 24px; }
+  .hero { padding: 60px 24px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-portrait { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .scout-letters { grid-template-columns: repeat(3, 1fr); }
+  .services-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .journey-bar { flex-direction: column; }
+  .journey-step + .journey-step { border-left: none; border-top: 1px solid #E5E7EB; }
+  footer { flex-direction: column; gap: 8px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header>
+  <div class="logo">
+    <svg width="28" height="28" viewBox="0 0 32 32">
+      <circle cx="16" cy="16" r="15" fill="#2A8A8A"/>
+      <polygon points="16,4 19.5,16 16,14 12.5,16" fill="white"/>
+      <polygon points="16,28 19.5,16 16,18 12.5,16" fill="#E8622A"/>
+      <circle cx="16" cy="16" r="2" fill="white"/>
+    </svg>
+    <span class="logo-text">SCOUT</span>
+  </div>
+  <nav class="nav-links">
+    <a href="#about">About</a>
+    <a href="#framework">Framework</a>
+    <a href="#services">Services</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#clarity-score" class="nav-clarity">✦ Clarity Score</a>
+    <a href="https://calendly.com/lamblucindaaj/compass-session-scout" target="_blank" class="nav-cta">Book a Session</a>
+  </nav>
+</header>
+
+<!-- ── Floating Clarity Score nudge ── -->
+<div id="clarity-nudge" style="
+  position:fixed;
+  bottom:28px;
+  right:28px;
+  z-index:200;
+  opacity:0;
+  transform:translateY(12px);
+  transition:opacity 0.4s ease, transform 0.4s ease;
+  pointer-events:none;
+">
+  <a href="#clarity-score" style="
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:var(--navy);
+    color:white;
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:100px;
+    font-family:'DM Sans',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    box-shadow:0 8px 32px rgba(28,43,74,0.35);
+    border:1px solid rgba(255,255,255,0.1);
+  ">
+    <span style="
+      width:8px;height:8px;
+      border-radius:50%;
+      background:var(--orange);
+      display:inline-block;
+      animation:nudge-pulse 1.8s ease-in-out infinite;
+    "></span>
+    Take the Clarity Score ↓
+  </a>
+</div>
+
+<style>
+@keyframes nudge-pulse {
+  0%,100% { box-shadow:0 0 0 0 rgba(232,98,42,0.5); }
+  50%      { box-shadow:0 0 0 6px rgba(232,98,42,0); }
+}
+.nav-clarity {
+  color: #4FAAA0 !important;
+  font-weight: 600 !important;
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+.nav-clarity:hover { color:white !important; }
+</style>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Welcome to SCOUT</p>
+      <h1 class="hero-title">
+        Your vision<br>is closer than<br><em>you think.</em>
+      </h1>
+      <p class="hero-subtitle">
+        I work with founders who have something real — an idea, a business, a direction — and want a thinking partner to help them make it happen. Someone who gets excited by the messy, early, energising work of figuring out what to do first, what to do next, and how to do it well.
+      </p>
+      <div class="hero-cta-row">
+        <a href="https://calendly.com/lamblucindaaj/compass-session-scout" target="_blank" class="btn-primary">Let's talk →</a>
+        <a href="#about" class="btn-ghost-white">About Lucinda ↓</a>
+      </div>
+    </div>
+
+    <div class="hero-portrait">
+      <div class="portrait-ring">
+        <div class="portrait-inner">
+          <svg class="portrait-compass" width="48" height="48" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="14" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <polygon points="16,4 19,16 16,14 13,16" fill="white"/>
+            <polygon points="16,28 19,16 16,18 13,16" fill="#E8622A"/>
+            <circle cx="16" cy="16" r="2.5" fill="white"/>
+          </svg>
+          <div class="portrait-initials">LL</div>
+          <div class="portrait-name-tag">Lucinda Lamb</div>
+        </div>
+      </div>
+      <div class="portrait-float-1">Strategy</div>
+      <div class="portrait-float-2">Coaching</div>
+      <div class="portrait-float-3">Growth</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── About ── -->
+<section class="about-section" id="about">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-eyebrow">About Lucinda</p>
+      <h2 class="section-title">I genuinely love<br><em>this work.</em></h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-story reveal">
+        <p>There's a specific moment I find completely energising — when a founder goes from "I think I know what I want to do" to "I know exactly what to do and in what order." That shift from foggy to focused is what I get out of bed for.</p>
+
+        <blockquote>"The vision is almost never the problem. It's the gap between vision and sequenced, executable action — that's where I come in."</blockquote>
+
+        <p>I'm a runner and endurance athlete, and I think about founder journeys the same way I think about long races. It's not about going flat out from the start. It's about knowing your route, understanding which sections need effort and which need patience, and having someone alongside you who's studied the terrain. <strong>That's what I do for the businesses I work with.</strong></p>
+
+        <p>My background is 15+ years building and scaling digital businesses — including the early days of one of the UK's most ambitious e-commerce companies, growing from a small team into a global enterprise. I've made the hard calls, been in rooms where the strategy was wrong, and learned what separates businesses that scale from ones that stall.</p>
+
+        <p>What I care about most is that you leave every conversation more capable and more confident than when we started. Not reliant on me — ready to move on your own terms, with a clear sense of what's next.</p>
+      </div>
+
+      <div class="truths reveal reveal-delay-2">
+        <div class="truth-card">
+          <div class="truth-icon" style="background:#E8F5F4">✦</div>
+          <div class="truth-body">
+            <h4>I get excited by the early stuff</h4>
+            <p>The messy, energising work of figuring out what to prioritise, what to sequence, what to do first — this is where I'm most useful and most engaged.</p>
+          </div>
+        </div>
+
+        <div class="truth-card">
+          <div class="truth-icon" style="background:#FDF0EA">🧭</div>
+          <div class="truth-body">
+            <h4>I find the real issue quickly</h4>
+            <p>The presenting problem is rarely the actual one. Pattern recognition built across 15+ years means I tend to hear what's underneath — fast.</p>
+          </div>
+        </div>
+
+        <div class="truth-card">
+          <div class="truth-icon" style="background:#EEF1F7">⚡</div>
+          <div class="truth-body">
+            <h4>Complexity is where I thrive</h4>
+            <p>Messy briefs, founder-led chaos, ambiguous situations — I've studied the terrain. There's almost always a cleaner path through than it first appears.</p>
+          </div>
+        </div>
+
+        <div class="truth-card">
+          <div class="truth-icon" style="background:#E8F5F4">🌱</div>
+          <div class="truth-body">
+            <h4>I build confidence, not reliance</h4>
+            <p>The goal is always to leave you sharper, clearer, and more capable. Not to make yourself indispensable — to make you unstoppable.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Framework ── -->
+<section class="framework-section" id="framework">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-eyebrow">The Framework</p>
+      <h2 class="section-title">How SCOUT works.</h2>
+      <p class="section-lead">Every engagement — whether a single session or an ongoing partnership — works across five dimensions. Together, they form a complete picture of where your business is and where it needs to go.</p>
+    </div>
+
+    <div class="scout-letters">
+      <div class="scout-letter-card reveal reveal-delay-1" style="--accent:#2A8A8A">
+        <div class="letter-char" style="color:#4FAAA0">S</div>
+        <div class="letter-word">Strategy</div>
+        <div class="letter-desc">Direction, roadmaps, and the clarity to make confident long-term decisions.</div>
+        <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:#2A8A8A;opacity:0;transition:opacity 0.25s"></div>
+      </div>
+
+      <div class="scout-letter-card reveal reveal-delay-2">
+        <div class="letter-char" style="color:#E8622A">C</div>
+        <div class="letter-word">Commerce</div>
+        <div class="letter-desc">Revenue growth, unit economics, and the commercial levers that actually move the needle.</div>
+      </div>
+
+      <div class="scout-letter-card reveal reveal-delay-3">
+        <div class="letter-char" style="color:#4FAAA0">O</div>
+        <div class="letter-word">Operations</div>
+        <div class="letter-desc">Systems, process, and resilience — so the business works without you in every decision.</div>
+      </div>
+
+      <div class="scout-letter-card reveal reveal-delay-4">
+        <div class="letter-char" style="color:#E8622A">U</div>
+        <div class="letter-word">User Experience</div>
+        <div class="letter-desc">CRO, platform optimisation, and understanding your customer at every touchpoint.</div>
+      </div>
+
+      <div class="scout-letter-card reveal reveal-delay-4">
+        <div class="letter-char" style="color:#4FAAA0">T</div>
+        <div class="letter-word">Transformation</div>
+        <div class="letter-desc">Change leadership, team capability, and the confidence to lead through complexity.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Services ── -->
+<section class="services-section" id="services">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-eyebrow">How We Work Together</p>
+      <h2 class="section-title">Three ways in.<br><em>One direction.</em></h2>
+      <p class="section-lead">Every engagement is shaped around where you are and what you need. Start where it makes sense — move forward when you're ready.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Compass Session -->
+      <div class="service-card tier-1 reveal reveal-delay-1">
+        <div class="service-card-header">
+          <div class="service-number">01</div>
+          <div class="service-tag">Entry Point</div>
+          <h3 class="service-name">Compass Session</h3>
+          <p class="service-tagline">90 minutes. One conversation. Surprising clarity.</p>
+        </div>
+        <div class="service-card-body">
+          <div class="service-divider"></div>
+          <ul class="service-points">
+            <li>A focused 90-minute conversation built around your priorities</li>
+            <li>Part strategy, part coaching — entirely practical</li>
+            <li>Surfaces the real issue, not just the presenting one</li>
+            <li>Written summary of insights and actions within 24 hours</li>
+            <li>No long-term commitment required</li>
+          </ul>
+          <a href="https://calendly.com/lamblucindaaj/compass-session-scout" target="_blank" class="service-cta-link">Book a Compass Session →</a>
+        </div>
+      </div>
+
+      <!-- Route Mapping -->
+      <div class="service-card tier-2 reveal reveal-delay-2">
+        <div class="service-card-header">
+          <div class="service-number">02</div>
+          <div class="service-tag">Structured Engagement</div>
+          <h3 class="service-name">Route Mapping</h3>
+          <p class="service-tagline">4–6 weeks. A specific challenge. A plan you can execute.</p>
+        </div>
+        <div class="service-card-body">
+          <div class="service-divider"></div>
+          <ul class="service-points">
+            <li>Built around one specific growth challenge or objective</li>
+            <li>Four structured sessions plus async access between them</li>
+            <li>Strategy, priorities, and sequencing — built together</li>
+            <li>Tangible output: roadmap, GTM plan, or product brief</li>
+            <li>Compass Session fee credited in full</li>
+          </ul>
+          <a href="mailto:hello@welcometoscout.com" class="service-cta-link">Start your Route Map →</a>
+        </div>
+      </div>
+
+      <!-- True North -->
+      <div class="service-card tier-3 reveal reveal-delay-3">
+        <div class="service-card-header">
+          <div class="service-number">03</div>
+          <div class="service-tag">Ongoing Partnership</div>
+          <h3 class="service-name">True North Advisory</h3>
+          <p class="service-tagline">Monthly. Retained. A strategic mind in your corner.</p>
+        </div>
+        <div class="service-card-body">
+          <div class="service-divider"></div>
+          <ul class="service-points">
+            <li>Monthly strategic session plus async support</li>
+            <li>Thinking partner for decisions, not just strategy days</li>
+            <li>Honest challenge and fresh perspective — consistently</li>
+            <li>Priority access when something urgent lands</li>
+            <li>Shaped around your business, not a fixed template</li>
+          </ul>
+          <a href="mailto:hello@welcometoscout.com" class="service-cta-link">Start a conversation →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Journey bar -->
+    <div class="journey-bar reveal">
+      <div class="journey-step">
+        <div class="journey-dot" style="background:var(--teal)"></div>
+        <div>
+          <div class="journey-step-label">Start here</div>
+          <div class="journey-step-name">Compass Session</div>
+        </div>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-step">
+        <div class="journey-dot" style="background:var(--orange)"></div>
+        <div>
+          <div class="journey-step-label">Go deeper</div>
+          <div class="journey-step-name">Route Mapping</div>
+        </div>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-step">
+        <div class="journey-dot" style="background:var(--navy)"></div>
+        <div>
+          <div class="journey-step-label">Stay sharp</div>
+          <div class="journey-step-name">True North Advisory</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Testimonials ── -->
+<section class="testimonials-section" id="testimonials">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-eyebrow">What People Say</p>
+      <h2 class="section-title">In their words.</h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal reveal-delay-1">
+        <span class="testimonial-quote-mark">"</span>
+        <p class="testimonial-text">A rare leader who blends creativity with execution, inspires teams, and drives real commercial impact.</p>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-attr">Matthew Moulding</div>
+        <div class="testimonial-role">Founder, THG</div>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-2">
+        <span class="testimonial-quote-mark">"</span>
+        <p class="testimonial-text">Always a step ahead. A natural coach who elevates both people and performance.</p>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-attr">Neil Mistry</div>
+        <div class="testimonial-role">CEO, Myprotein</div>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-3">
+        <span class="testimonial-quote-mark">"</span>
+        <p class="testimonial-text">One of the most innovative and strategic minds I've worked with.</p>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-attr">Reece Medway</div>
+        <div class="testimonial-role">Google Partner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Bridge into Clarity Score ── -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="reveal">
+      <p class="section-eyebrow" style="justify-content:center">Your next move</p>
+      <h2 class="cta-title">Not sure where<br>to <em>start?</em></h2>
+      <p class="cta-sub">Take the Clarity Score below. 10 honest questions. 3 minutes. You'll get a clear picture of where you're sharp — and where the fog is. Then we can talk about what to do with it.</p>
+      <div class="cta-buttons">
+        <a href="#clarity-score" class="btn-primary">Find My Clarity Score ↓</a>
+        <a href="#services" class="btn-secondary">See How We Work →</a>
+      </div>
+      <p class="cta-note">welcometoscout.com</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Clarity Score Section ── -->
+<section id="clarity-score" style="background:#1C2B4A; padding: 0;">
+
+  <!-- Transition band -->
+  <div style="background:linear-gradient(180deg, #FAF7F2 0%, #1C2B4A 100%); height:80px;"></div>
+
+  <!-- Score header -->
+  <div style="text-align:center; padding: 0 24px 48px; position:relative; z-index:2;">
+    <p style="font-size:10px; letter-spacing:3px; text-transform:uppercase; font-weight:600; color:#E8622A; margin-bottom:14px; display:flex; align-items:center; justify-content:center; gap:10px;">
+      <span style="display:block;width:20px;height:1.5px;background:#E8622A;"></span>
+      SCOUT Diagnostic Tool
+      <span style="display:block;width:20px;height:1.5px;background:#E8622A;"></span>
+    </p>
+    <h2 style="font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,40px); color:white; line-height:1.2; margin-bottom:12px;">Find your <em style="color:#4FAAA0; font-style:italic;">Clarity Score.</em></h2>
+    <p style="font-size:15px; color:rgba(255,255,255,0.55); max-width:480px; margin:0 auto; line-height:1.7;">10 honest questions across the five SCOUT dimensions. No fluff — just a clear picture of where you're sharp and where the fog is.</p>
+  </div>
+
+  <!-- Score app card -->
+  <div style="max-width:780px; margin:0 auto; padding:0 24px 80px; position:relative; z-index:2;">
+    <div style="background:#FAF7F2; border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.4);">
+
+      <!-- Card inner header -->
+      <div style="background:#1A6B6B; padding:20px 32px; display:flex; align-items:center; justify-content:space-between;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <svg width="24" height="24" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="15" fill="#2A8A8A"/>
+            <polygon points="16,4 19.5,16 16,14 12.5,16" fill="white"/>
+            <polygon points="16,28 19.5,16 16,18 12.5,16" fill="#E8622A"/>
+            <circle cx="16" cy="16" r="2" fill="white"/>
+          </svg>
+          <span style="font-weight:600; font-size:13px; letter-spacing:2px; color:white;">SCOUT</span>
+        </div>
+        <span style="font-family:'Playfair Display',serif; font-style:italic; font-size:12px; color:rgba(255,255,255,0.6);">Clarity Score</span>
+      </div>
+
+      <!-- Score screens -->
+      <div style="padding:40px 40px 48px;">
+
+        <!-- INTRO SCREEN -->
+        <div class="cs-screen cs-active" id="cs-intro">
+          <p class="intro-eyebrow">Scout Diagnostic Tool</p>
+          <h1 class="intro-title">Find your<br><span>Clarity Score.</span></h1>
+          <p class="intro-subtitle">10 honest questions across the five SCOUT dimensions. No fluff. Just a clear picture of where you're sharp — and where the fog is.</p>
+
+          <div class="dimensions-preview">
+            <div class="dim-pill"><span class="dot" style="background:#1C2B4A"></span>Strategy</div>
+            <div class="dim-pill"><span class="dot" style="background:#2A8A8A"></span>Commerce</div>
+            <div class="dim-pill"><span class="dot" style="background:#1A6B6B"></span>Operations</div>
+            <div class="dim-pill"><span class="dot" style="background:#E8622A"></span>User Experience</div>
+            <div class="dim-pill"><span class="dot" style="background:#4FAAA0"></span>Transformation</div>
+          </div>
+
+          <div style="margin-bottom:24px;">
+            <label style="display:block; font-size:13px; font-weight:600; color:#1C2B4A; margin-bottom:8px;">Your first name</label>
+            <input type="text" id="cs-user-name" placeholder="e.g. Lucinda"
+              style="width:100%; max-width:300px; padding:12px 16px; border:2px solid #E5E7EB; border-radius:8px; font-family:'DM Sans',sans-serif; font-size:15px; outline:none; transition:border 0.2s; background:white;"
+              onfocus="this.style.borderColor='#2A8A8A'" onblur="this.style.borderColor='#E5E7EB'">
+          </div>
+
+          <button class="cs-btn-primary" onclick="csStart()">Begin the Assessment →</button>
+          <p class="intro-note">Takes about 3 minutes. Completely honest answers give you the most useful results.</p>
+        </div>
+
+        <!-- QUESTION SCREEN -->
+        <div class="cs-screen" id="cs-question">
+          <div class="progress-wrap">
+            <div class="progress-info">
+              <span class="progress-label" id="cs-dim-label">Strategy</span>
+              <span class="progress-count" id="cs-q-count">1 of 10</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" id="cs-progress-fill" style="width:0%"></div>
+            </div>
+          </div>
+          <div class="dimension-badge" id="cs-dim-badge">
+            <span id="cs-dim-badge-letter">S</span>
+            <span id="cs-dim-badge-name">Strategy</span>
+          </div>
+          <h2 class="question-text" id="cs-question-text"></h2>
+          <div class="likert-wrap">
+            <div class="likert-labels">
+              <span class="likert-label">Not at all</span>
+              <span class="likert-label">Absolutely</span>
+            </div>
+            <div class="likert-options" id="cs-likert-options"></div>
+          </div>
+          <div class="nav-row">
+            <button class="btn-ghost" id="cs-btn-back" onclick="csBack()">← Back</button>
+            <button class="cs-btn-primary" id="cs-btn-next" onclick="csNext()" disabled style="opacity:0.4">
+              <span id="cs-btn-next-text">Next →</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- RESULTS SCREEN -->
+        <div class="cs-screen" id="cs-results">
+          <div class="results-header">
+            <p class="results-eyebrow">Your SCOUT Clarity Score</p>
+            <p class="results-name" id="cs-results-name">Your Results</p>
+            <div class="score-display" id="cs-total-score">0<span>/100</span></div>
+            <div class="score-label" id="cs-score-label">Loading...</div>
+            <p class="score-summary" id="cs-score-summary"></p>
+          </div>
+          <h3 class="dimensions-title">Breakdown by Dimension</h3>
+          <div id="cs-dimensions-output"></div>
+          <div class="section-divider"></div>
+          <div class="results-cta">
+            <h3 class="cta-title">Ready to close the gap?</h3>
+            <p class="cta-sub">A Compass Session gives you 90 minutes to work through exactly what your score has surfaced. Clarity, direction, and a concrete next step.</p>
+            <div class="cta-buttons">
+              <button class="btn-cta" onclick="window.open('https://calendly.com/lamblucindaaj/compass-session-scout','_blank')">Book a Compass Session</button>
+              <button class="btn-cta-ghost" onclick="csScrollTop()">Back to SCOUT ↑</button>
+            </div>
+          </div>
+          <div class="retake-link">
+            <button onclick="csRetake()">Retake the assessment</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom taper -->
+  <div style="background:linear-gradient(180deg,#1C2B4A 0%,#111827 100%); height:40px;"></div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="logo">
+    <svg width="24" height="24" viewBox="0 0 32 32">
+      <circle cx="16" cy="16" r="15" fill="#2A8A8A"/>
+      <polygon points="16,4 19.5,16 16,14 12.5,16" fill="white"/>
+      <polygon points="16,28 19.5,16 16,18 12.5,16" fill="#E8622A"/>
+      <circle cx="16" cy="16" r="2" fill="white"/>
+    </svg>
+    <span class="logo-text" style="font-size:14px">SCOUT</span>
+  </div>
+  <span class="footer-tagline">Your Strategic Compass.</span>
+</footer>
+
+<style>
+/* ── Clarity Score embedded styles ── */
+.cs-screen { display:none; animation: fadeUp 0.5s ease forwards; }
+.cs-screen.cs-active { display:block; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+.cs-btn-primary {
+  background: #E8622A; color: white; border: none;
+  padding: 14px 32px; border-radius: 8px;
+  font-family: 'DM Sans', sans-serif; font-size:15px; font-weight:600;
+  cursor:pointer; transition:all 0.2s; letter-spacing:0.3px;
+}
+.cs-btn-primary:hover { background:#D4561F; transform:translateY(-1px); box-shadow:0 8px 24px rgba(232,98,42,0.3); }
+.cs-btn-primary:disabled { opacity:0.4; cursor:not-allowed; transform:none; box-shadow:none; }
+</style>
+
+<script>
+// ── Floating nudge — appears after scrolling past hero ──
+const nudge = document.getElementById('clarity-nudge');
+const hero = document.querySelector('.hero');
+window.addEventListener('scroll', () => {
+  const heroBottom = hero.getBoundingClientRect().bottom;
+  const pastHero = heroBottom < 0;
+  const nearScore = document.getElementById('clarity-score').getBoundingClientRect().top < 200;
+  if (pastHero && !nearScore) {
+    nudge.style.opacity = '1';
+    nudge.style.transform = 'translateY(0)';
+    nudge.style.pointerEvents = 'auto';
+  } else {
+    nudge.style.opacity = '0';
+    nudge.style.transform = 'translateY(12px)';
+    nudge.style.pointerEvents = 'none';
+  }
+});
+
+// ── Overview scroll reveal ──
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Service card hover bar
+document.querySelectorAll('.scout-letter-card').forEach(card => {
+  const bar = card.querySelector('div[style*="position:absolute"]');
+  if (bar) {
+    card.addEventListener('mouseenter', () => bar.style.opacity = '1');
+    card.addEventListener('mouseleave', () => bar.style.opacity = '0');
+  }
+});
+
+// ── Clarity Score logic ──
+const CS_DIMENSIONS = [
+  { key:'S', name:'Strategy',        color:'#1C2B4A' },
+  { key:'C', name:'Commerce',        color:'#2A8A8A' },
+  { key:'O', name:'Operations',      color:'#1A6B6B' },
+  { key:'U', name:'User Experience', color:'#E8622A' },
+  { key:'T', name:'Transformation',  color:'#4FAAA0' },
+];
+
+const CS_QUESTIONS = [
+  { dim:0, text:"I have a clear, written strategy for where my business is going in the next 12 months — and I refer to it regularly." },
+  { dim:0, text:"When I make big decisions, I'm confident they're aligned to a clear long-term direction — not just gut feel or short-term pressure." },
+  { dim:1, text:"I understand exactly which products, channels, or customers drive the most value in my business — and I'm actively doubling down on them." },
+  { dim:1, text:"I have a clear view of my unit economics, conversion rates, and revenue levers — and I know which ones to pull to grow." },
+  { dim:2, text:"My business could run for two weeks without me making every decision — the systems, processes, and people are in place." },
+  { dim:2, text:"I'm spending the majority of my time on high-value, strategic work — not firefighting, admin, or tasks I should have delegated." },
+  { dim:3, text:"I genuinely understand my customers' experience end-to-end — where they drop off, what delights them, and what would make them loyal." },
+  { dim:3, text:"My brand and communication clearly articulate what makes me different — and customers feel it at every touchpoint." },
+  { dim:4, text:"I'm actively investing in change — whether that's new technology, new capabilities, or new ways of working — rather than maintaining the status quo." },
+  { dim:4, text:"I feel confident and energised about where my business is heading — not stuck, overwhelmed, or quietly hoping things will sort themselves out." },
+];
+
+const CS_INSIGHTS = [
+  [
+    { tag:'strong',     label:'Strong',         text:"Your strategic clarity is a real asset. You know where you're going and why — this makes every other decision easier." },
+    { tag:'developing', label:'Developing',      text:"You have direction, but it's not fully crystallised yet. Getting this sharper is high-leverage — everything else flows from it." },
+    { tag:'focus',      label:'Priority Focus',  text:"Strategy is the foundation. Without a clear direction, even great execution can take you further from where you want to be." },
+  ],
+  [
+    { tag:'strong',     label:'Strong',         text:"You're commercially sharp. You know your numbers and your levers — that's a significant advantage." },
+    { tag:'developing', label:'Developing',      text:"There's commercial opportunity you're not fully capturing yet. Sharpening your focus here could unlock meaningful growth." },
+    { tag:'focus',      label:'Priority Focus',  text:"Understanding your commercial engine is critical. Without this clarity, growth feels unpredictable and hard to sustain." },
+  ],
+  [
+    { tag:'strong',     label:'Strong',         text:"Your operations are working for you, not against you. This frees you to focus on the work that actually moves the business forward." },
+    { tag:'developing', label:'Developing',      text:"There are operational gaps that are likely costing you time and headspace. Worth addressing before you try to scale." },
+    { tag:'focus',      label:'Priority Focus',  text:"If the business depends on you for everything, it can't scale. Building operational resilience is foundational work." },
+  ],
+  [
+    { tag:'strong',     label:'Strong',         text:"You're genuinely customer-centric. Your ability to understand and design for your audience is a competitive differentiator." },
+    { tag:'developing', label:'Developing',      text:"You understand your customers but there are gaps in how that shows up in the experience. Worth closing." },
+    { tag:'focus',      label:'Priority Focus',  text:"Customer experience is where growth happens or stalls. Understanding what your customers actually feel is non-negotiable." },
+  ],
+  [
+    { tag:'strong',     label:'Strong',         text:"You're forward-looking and energised. That mindset is what keeps a business relevant and growing." },
+    { tag:'developing', label:'Developing',      text:"You're in motion but not yet in full momentum. There's more growth available if you lean into change more deliberately." },
+    { tag:'focus',      label:'Priority Focus',  text:"If you're feeling stuck or maintaining the status quo, something needs to shift. The question is what — and that's exactly what a Compass Session explores." },
+  ],
+];
+
+const CS_LEVELS = [
+  { min:80, label:'Highly Aligned',    summary:"You have exceptional clarity across most dimensions. The opportunity now is sharpening the edges — turning good into outstanding, and making sure your strategy is as strong in execution as it is on paper." },
+  { min:60, label:'Good Foundations',  summary:"You have real clarity in some areas and meaningful gaps in others. The good news: you're not starting from zero. A focused conversation could help you prioritise where to put your energy." },
+  { min:40, label:'Emerging Clarity',  summary:"There's real potential here, but the fog is thick in places. You're likely working hard without always feeling like you're moving in the right direction. That's exactly what clarity work is designed to fix." },
+  { min:0,  label:'Time for a Reset',  summary:"Honesty takes courage — and you've shown it here. Low scores often mean you're in the weeds, overwhelmed, or at a genuine inflection point. The good news: this is the most transformative moment to get support." },
+];
+
+let csAnswers = new Array(10).fill(null);
+let csCurrentQ = 0;
+let csUserName = '';
+
+function csShowScreen(id) {
+  document.querySelectorAll('.cs-screen').forEach(s => {
+    s.classList.remove('cs-active');
+    s.style.display = 'none';
+  });
+  const el = document.getElementById(id);
+  el.style.display = 'block';
+  requestAnimationFrame(() => el.classList.add('cs-active'));
+}
+
+function csStart() {
+  csUserName = document.getElementById('cs-user-name').value.trim() || 'Your';
+  csShowScreen('cs-question');
+  csRenderQuestion();
+}
+
+function csRenderQuestion() {
+  const q = CS_QUESTIONS[csCurrentQ];
+  const dim = CS_DIMENSIONS[q.dim];
+  const total = CS_QUESTIONS.length;
+
+  document.getElementById('cs-dim-label').textContent = dim.name;
+  document.getElementById('cs-q-count').textContent = `${csCurrentQ + 1} of ${total}`;
+  document.getElementById('cs-progress-fill').style.width = `${(csCurrentQ / total) * 100}%`;
+  document.getElementById('cs-dim-badge-letter').textContent = dim.key;
+  document.getElementById('cs-dim-badge-name').textContent = dim.name;
+  document.getElementById('cs-dim-badge').style.background = dim.color + '18';
+  document.getElementById('cs-dim-badge').style.color = dim.color;
+  document.getElementById('cs-question-text').textContent = q.text;
+
+  const opts = document.getElementById('cs-likert-options');
+  opts.innerHTML = '';
+  for (let i = 1; i <= 5; i++) {
+    const btn = document.createElement('button');
+    btn.className = 'likert-btn';
+    btn.innerHTML = `<span class="likert-num">${i}</span>`;
+    if (csAnswers[csCurrentQ] === i) btn.classList.add('selected');
+    btn.addEventListener('click', () => csSelect(i));
+    opts.appendChild(btn);
+  }
+
+  const nextBtn = document.getElementById('cs-btn-next');
+  const hasAnswer = csAnswers[csCurrentQ] !== null;
+  nextBtn.disabled = !hasAnswer;
+  nextBtn.style.opacity = hasAnswer ? '1' : '0.4';
+  document.getElementById('cs-btn-next-text').textContent =
+    csCurrentQ === CS_QUESTIONS.length - 1 ? 'See My Results →' : 'Next →';
+  document.getElementById('cs-btn-back').style.visibility = csCurrentQ === 0 ? 'hidden' : 'visible';
+}
+
+function csSelect(val) {
+  csAnswers[csCurrentQ] = val;
+  document.querySelectorAll('#cs-likert-options .likert-btn').forEach((btn, i) => {
+    btn.classList.toggle('selected', i + 1 === val);
+  });
+  const nextBtn = document.getElementById('cs-btn-next');
+  nextBtn.disabled = false;
+  nextBtn.style.opacity = '1';
+}
+
+function csNext() {
+  if (csAnswers[csCurrentQ] === null) return;
+  if (csCurrentQ < CS_QUESTIONS.length - 1) {
+    csCurrentQ++;
+    csRenderQuestion();
+  } else {
+    csShowResults();
+  }
+}
+
+function csBack() {
+  if (csCurrentQ > 0) { csCurrentQ--; csRenderQuestion(); }
+}
+
+function csShowResults() {
+  csShowScreen('cs-results');
+
+  const dimScores = CS_DIMENSIONS.map((_, di) => {
+    const qs = CS_QUESTIONS.map((q, i) => q.dim === di ? csAnswers[i] : null).filter(v => v !== null);
+    const raw = qs.reduce((a, b) => a + b, 0);
+    return Math.round((raw / (qs.length * 5)) * 100);
+  });
+
+  const total = Math.round(dimScores.reduce((a, b) => a + b, 0) / dimScores.length);
+
+  document.getElementById('cs-results-name').textContent =
+    (csUserName && csUserName !== 'Your') ? `${csUserName}'s Clarity Score` : 'Your Clarity Score';
+
+  let displayed = 0;
+  const scoreEl = document.getElementById('cs-total-score');
+  const interval = setInterval(() => {
+    displayed = Math.min(displayed + 2, total);
+    scoreEl.innerHTML = `${displayed}<span>/100</span>`;
+    if (displayed >= total) clearInterval(interval);
+  }, 20);
+
+  const level = CS_LEVELS.find(l => total >= l.min);
+  document.getElementById('cs-score-label').textContent = level.label;
+  document.getElementById('cs-score-summary').textContent = level.summary;
+
+  const container = document.getElementById('cs-dimensions-output');
+  container.innerHTML = '';
+  CS_DIMENSIONS.forEach((dim, i) => {
+    const score = dimScores[i];
+    const insight = CS_INSIGHTS[i][score >= 70 ? 0 : score >= 40 ? 1 : 2];
+    const row = document.createElement('div');
+    row.className = 'dimension-row';
+    row.innerHTML = `
+      <div class="dim-row-top">
+        <div class="dim-name">
+          <div class="dim-letter" style="background:${dim.color}">${dim.key}</div>
+          ${dim.name}
+        </div>
+        <div class="dim-score-text">${score}<small style="font-size:12px;color:#9CA3AF;font-weight:400">/100</small></div>
+      </div>
+      <div class="dim-bar-bg">
+        <div class="dim-bar-fill" style="background:${dim.color}" data-target="${score}"></div>
+      </div>
+      <span class="dim-tag tag-${insight.tag}">${insight.label}</span>
+      <div class="dim-insight">${insight.text}</div>`;
+    container.appendChild(row);
+  });
+
+  setTimeout(() => {
+    document.querySelectorAll('#cs-dimensions-output .dim-bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.target + '%';
+    });
+  }, 200);
+}
+
+function csRetake() {
+  csAnswers = new Array(10).fill(null);
+  csCurrentQ = 0;
+  csShowScreen('cs-intro');
+}
+
+function csScrollTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
